@@ -7,6 +7,7 @@ import './styles/navigation.css';
 import './styles/pages.css';
 import './styles/footer.css';
 import './styles/cursor.css';
+import './styles/projectcard.css';
 import App from './App';
 import ReactDOM from 'react-dom/client';
 

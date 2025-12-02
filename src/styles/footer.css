@@ -35,3 +35,15 @@
   text-decoration: none;
   transition: color 0.3s ease;
 }
+
+.footer-links a .hover-icon {
+  display: none;
+}
+
+.footer-links a:hover .default-icon {
+  display: none;
+}
+
+.footer-links a:hover .hover-icon {
+  display: inline;
+}

@@ -11,10 +11,9 @@ import { ReactComponent as ViewLightHover } from '../assets/viewmode-hover.svg';
 import { ReactComponent as ViewDark } from '../assets/viewmode-dark.svg';
 import { ReactComponent as ViewDarkHover } from '../assets/viewmode-dark-hover.svg';
 
-function Navigation() {
+function Navigation({ isDarkMode, setIsDarkMode }) {
   const location = useLocation();
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
+  
   useEffect(() => {
     const savedMode = localStorage.getItem('darkMode');
     if (savedMode) {

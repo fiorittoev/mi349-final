@@ -1,37 +1,55 @@
-.title-card-container {
+.project-left-card-container,.project-right-card-container {
     position: relative;
     width: 100%;
-    height: 500px; 
+    height: 750px; 
 }
 
-.background-3, .background-2, .background-1 {
+.project-left-background-3,
+.project-right-background-3,
+.project-left-background-2,
+.project-right-background-2,
+.project-left-background-1,
+.project-right-background-1 {
     position: absolute;
-    left: 0;
     border-radius: 3px;
     backdrop-filter: blur(10px); /* blur content behind */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
     opacity: 0;
-    animation: cascade-right-transparent 0.8s ease-out forwards;
 }
 
-.background-3 {
+/* Left cards positioned on the left */
+.project-left-background-3,
+.project-left-background-2,
+.project-left-background-1 {
+    left: 0;
+}
+
+/* Right cards positioned on the right */
+.project-right-background-3,
+.project-right-background-2,
+.project-right-background-1 {
+    right: 0;
+}
+
+.project-left-background-3,
+.project-right-background-3 {
     background-color: var(--tertiary-color-light);
     width: 60%;
     height: 34%;
     top: 30%;
-    animation-delay: 0s;
 }
 
-.background-2 {
+.project-left-background-2,
+.project-right-background-2 {
     background-color: var(--secondary-color-light);
     width: 60%;
     height: 32%;
     top: 30%;
-    animation-delay: 0.2s;
 }
 
-.background-1 {
+.project-left-background-1,
+.project-right-background-1 {
     background-color: var(--primary-color-light);
     width: 60%;
     height: 30%;
@@ -40,19 +58,17 @@
     align-items: center;
     justify-content: flex-end;
     padding-right: 2rem; 
-    animation: cascade-right-solid 0.8s ease-out forwards;
-    animation-delay: 0.4s;
 }
 
 @keyframes cascade-right-transparent {
     0% {
         transform: translateX(-100%);
-        opacity: 0.5;
+        opacity: 0.3;
     }
     100% {
 
         transform: translateX(0%);
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }
 @keyframes cascade-right-solid {
@@ -65,10 +81,4 @@
         transform: translateX(0%);
         opacity: 0.9;
     }
-}
-
-.title-card-title {
-    color: var(--background-color-light);
-    font-size: 2rem;
-    font-weight: bold;
 }

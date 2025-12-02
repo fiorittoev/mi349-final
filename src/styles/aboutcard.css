@@ -12,7 +12,6 @@
     border-radius: 3px;
     backdrop-filter: blur(10px); /* blur content behind */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
-    border-radius: 12px; /* optional rounded corners */
     border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
     opacity: 0;
     animation: cascade-up-transparent 0.8s ease-out forwards;
@@ -20,7 +19,7 @@
 
 .about-background-3 {
     background-color: var(--tertiary-color-light);
-    width: 62%;
+    width: 60%;
     height: 135vh;
     animation-delay: 0s;
     z-index: 1;
@@ -28,7 +27,7 @@
 
 .about-background-2 {
     background-color: var(--secondary-color-light);
-    width: 61%;
+    width: 60%;
     height: 130vh;
     animation-delay: 0.2s;
     z-index: 2;
@@ -48,11 +47,11 @@
 @keyframes cascade-up-transparent {
     0% {
         transform: translateY(100vh);
-        opacity: 0.5;
+        opacity: 0.3;
     }
     100% {
         transform: translateY(0);
-        opacity: 0.5;
+        opacity: 0.3;
     }
 }
 
