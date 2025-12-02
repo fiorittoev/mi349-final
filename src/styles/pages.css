@@ -1,0 +1,16 @@
+/* Page Styles */
+.page {
+  animation: fadeIn 0.3s ease;
+}
+
+.page-content {
+  border-radius: 8px;
+}
+
+/* 404 Page */
+.not-found-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}

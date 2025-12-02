@@ -1,0 +1,37 @@
+.footer {
+
+  background-color: rgba(255, 255, 255, 0.2); /* semi-transparent */
+  backdrop-filter: blur(10px); /* blur content behind */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 12px; /* optional rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+
+  padding: 2rem 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.footer-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.footer-content p {
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
