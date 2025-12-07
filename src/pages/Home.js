@@ -1,9 +1,9 @@
 import TitleCard from '../components/TitleCard.js';
-function Home() {
+function Home({ header = "hi, i'm evan", description }) {
   return (
     <div className="page home-page">
       <div className="page-content">
-        <TitleCard />
+        <TitleCard header={header} description={description} />
       </div>
     </div>
   );

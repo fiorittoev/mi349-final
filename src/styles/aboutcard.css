@@ -1,67 +1,84 @@
 .about-card-container {
     position: relative;
     width: 100%;
-    height:1500px; 
+    min-height: 600px;
+    height: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
+    margin: 0 auto;
+    margin-top: 10rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-shrink: 0;
 }
 
 .about-background-3, .about-background-2, .about-background-1 {
     position: absolute;
     border-radius: 3px;
-    backdrop-filter: blur(10px); /* blur content behind */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     opacity: 0;
     animation: cascade-up-transparent 0.8s ease-out forwards;
 }
 
 .about-background-3 {
     background-color: var(--tertiary-color-light);
-    width: 60%;
-    height: 135vh;
+    width: 50%;
+    height: 280px;
     animation-delay: 0s;
     z-index: 1;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(100vh);
 }
 
 .about-background-2 {
     background-color: var(--secondary-color-light);
-    width: 60%;
-    height: 130vh;
+    width: 50%;
+    height: 260px;
     animation-delay: 0.2s;
     z-index: 2;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(100vh);
 }
 
 .about-background-1 {
     background-color: var(--primary-color-light);
-    width: 60%;
-    height: 125vh;
+    width: 50%;
+    height: 240px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     animation: cascade-up-solid 0.8s ease-out forwards;
     animation-delay: 0.4s;
     z-index: 3;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) translateY(100vh);
 }
 
 @keyframes cascade-up-transparent {
     0% {
-        transform: translateY(100vh);
+        transform: translateX(-50%) translateY(100vh);
         opacity: 0.3;
     }
     100% {
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
         opacity: 0.3;
     }
 }
 
 @keyframes cascade-up-solid {
     0% {
-        transform: translateY(100vh);
-        opacity:0.9;
+        transform: translateX(-50%) translateY(100vh);
+        opacity: 0.9;
     }
     100% {
-        transform: translateY(0);
+        transform: translateX(-50%) translateY(0);
         opacity: 0.9;
     }
 }
@@ -69,6 +86,129 @@
 .about-card-title {
     color: var(--background-color-light);
     font-size: 2rem;
-    margin:1rem;
+    margin: 1rem;
     font-weight: bold;
+}
+
+.about-card-description {
+    color: var(--background-color-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 1rem;
+    opacity: 0.95;
+    text-align: center;
+    max-width: 80%;
+}
+
+/* Tablet Design */
+@media (max-width: 768px) {
+    .about-card-container {
+        margin-top: 6rem;
+        min-height: 500px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .about-background-3 {
+        width: 70%;
+        height: 260px;
+    }
+
+    .about-background-2 {
+        width: 70%;
+        height: 240px;
+    }
+
+    .about-background-1 {
+        width: 70%;
+        height: 220px;
+    }
+
+    .about-card-title {
+        font-size: 1.75rem;
+        margin: 0.75rem;
+    }
+
+    .about-card-description {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0.75rem;
+        max-width: 85%;
+    }
+}
+
+/* Mobile Design */
+@media (max-width: 480px) {
+    .about-card-container {
+        margin-top: 4rem;
+        min-height: 400px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .about-background-3 {
+        width: 90%;
+        height: 240px;
+        border-radius: 8px;
+    }
+
+    .about-background-2 {
+        width: 90%;
+        height: 220px;
+        border-radius: 8px;
+    }
+
+    .about-background-1 {
+        width: 90%;
+        height: 200px;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    .about-card-title {
+        font-size: 1.5rem;
+        margin: 0.5rem;
+    }
+
+    .about-card-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0.5rem;
+        max-width: 90%;
+    }
+}
+
+/* Extra Small Mobile Design */
+@media (max-width: 360px) {
+    .about-card-container {
+        margin-top: 3rem;
+        min-height: 350px;
+    }
+
+    .about-background-3 {
+        width: 95%;
+        height: 220px;
+    }
+
+    .about-background-2 {
+        width: 95%;
+        height: 200px;
+    }
+
+    .about-background-1 {
+        width: 95%;
+        height: 180px;
+    }
+
+    .about-card-title {
+        font-size: 1.25rem;
+        margin: 0.5rem;
+    }
+
+    .about-card-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin: 0.5rem;
+        max-width: 95%;
+    }
 }

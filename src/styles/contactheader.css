@@ -1,0 +1,281 @@
+.contact-header-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.contact-header-background-3,
+.contact-header-background-2,
+.contact-header-background-1 {
+    position: absolute;
+    right: 0;
+    border-radius: 3px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    opacity: 0;
+    animation: cascade-left-transparent 0.8s ease-out forwards;
+}
+
+.contact-header-background-3 {
+    background-color: var(--tertiary-color-light);
+    width: 60%;
+    height: 34%;
+    top: 30%;
+    animation-delay: 0s;
+}
+
+.contact-header-background-2 {
+    background-color: var(--secondary-color-light);
+    width: 60%;
+    height: 32%;
+    top: 30%;
+    animation-delay: 0.2s;
+}
+
+.contact-header-background-1 {
+    background-color: var(--primary-color-light);
+    width: 60%;
+    height: 30%;
+    top: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+    animation: cascade-left-solid 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+.contact-header-social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.contact-header-social-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: var(--background-color-light);
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.contact-header-social-link:hover {
+    background-color: var(--background-color-light);
+    color: var(--primary-color-light);
+    transform: translateY(-2px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-header-container.visible .contact-header-background-3,
+.contact-header-container.visible .contact-header-background-2 {
+    animation: cascade-left-transparent 0.8s ease-out forwards;
+}
+
+.contact-header-container.visible .contact-header-background-1 {
+    animation: cascade-left-solid 0.8s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+/* Animations entering from Right (so moving Left) */
+@keyframes cascade-left-transparent {
+    0% {
+        transform: translateX(100%);
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 0.3;
+    }
+}
+
+@keyframes cascade-left-solid {
+    0% {
+        transform: translateX(100%);
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 0.9;
+    }
+}
+
+.contact-header-title {
+    color: var(--background-color-light);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-header-description {
+    color: var(--background-color-light);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-top: 0.5rem;
+}
+
+/* Tablet Design */
+@media (max-width: 768px) {
+    .contact-header-container {
+        height: 450px;
+    }
+
+    .contact-header-background-1,
+    .contact-header-background-2,
+    .contact-header-background-3 {
+        width: 75%;
+        border-radius: 6px;
+    }
+
+    .contact-header-background-1 {
+        padding: 1.75rem;
+        height: 32%;
+    }
+
+    .contact-header-background-2 {
+        height: 34%;
+    }
+
+    .contact-header-background-3 {
+        height: 36%;
+    }
+
+    .contact-header-title {
+        font-size: 2rem;
+    }
+
+    .contact-header-description {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .contact-header-social-links {
+        gap: 1.25rem;
+        margin-top: 1.25rem;
+    }
+
+    .contact-header-social-link {
+        width: 42px;
+        height: 42px;
+        font-size: 1.4rem;
+    }
+}
+
+/* Mobile Design */
+@media (max-width: 480px) {
+    .contact-header-container {
+        height: 400px;
+    }
+
+    .contact-header-background-1,
+    .contact-header-background-2,
+    .contact-header-background-3 {
+        width: 90%;
+        border-radius: 8px;
+    }
+
+    .contact-header-background-1 {
+        padding: 1.5rem;
+        height: 35%;
+        top: 28%;
+    }
+
+    .contact-header-background-2 {
+        height: 37%;
+        top: 28%;
+    }
+
+    .contact-header-background-3 {
+        height: 39%;
+        top: 28%;
+    }
+
+    .contact-header-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-header-description {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-top: 0.5rem;
+    }
+
+    .contact-header-social-links {
+        gap: 1rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .contact-header-social-link {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+    }
+
+    /* Enhanced touch target for mobile */
+    .contact-header-social-link:active {
+        transform: translateY(0) scale(1.05);
+    }
+}
+
+/* Extra Small Mobile Design */
+@media (max-width: 360px) {
+    .contact-header-container {
+        height: 380px;
+    }
+
+    .contact-header-background-1,
+    .contact-header-background-2,
+    .contact-header-background-3 {
+        width: 95%;
+        border-radius: 8px;
+    }
+
+    .contact-header-background-1 {
+        padding: 1.25rem;
+        height: 38%;
+        top: 26%;
+    }
+
+    .contact-header-background-2 {
+        height: 40%;
+        top: 26%;
+    }
+
+    .contact-header-background-3 {
+        height: 42%;
+        top: 26%;
+    }
+
+    .contact-header-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .contact-header-description {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-top: 0.4rem;
+    }
+
+    .contact-header-social-links {
+        gap: 0.9rem;
+        margin-top: 0.9rem;
+    }
+
+    .contact-header-social-link {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3rem;
+    }
+}
